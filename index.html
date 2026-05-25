@@ -629,10 +629,10 @@ border-radius:20px;
 }
 
 /* ========================= */
-/* MOBILE (FULLY IMPROVED) */
+/* MOBILE & RESPONSIVE FIXES */
 /* ========================= */
 
-@media(max-width:768px){
+@media(max-width: 932px) {
     *{cursor:auto;}
     .custom-cursor{display:none;}
     
@@ -640,10 +640,59 @@ border-radius:20px;
     .title{font-size:2.2rem; margin-bottom: 30px;}
     .subtitle{font-size:1.2rem; text-align:center; padding: 0 20px;}
     .gift{font-size:5rem;}
-    .gift-glow{width: 140px; height: 140px;}
     
-    /* Vinyl Fixes - Less obtrusive, scaled down so pictures pop more */
-    #rotating-disk{
+    /* Default Portrait Mobile */
+    .frame {
+        min-width: 80vw;
+        height: 52vh;
+        padding: 12px 12px 65px 12px;
+    }
+
+    /* LANDSCAPE OVERRIDE - Fixes the "cut off" issue */
+    @media (orientation: landscape) {
+        .gallery-track {
+            gap: 40px;
+            padding-right: 50vw;
+            align-items: center;
+        }
+
+        .frame {
+            min-width: auto;
+            width: 45vw; /* Makes frames wider to fit the screen better */
+            height: 70vh; /* Prevents images from being cut off vertically */
+            padding: 10px 10px 50px 10px;
+        }
+
+        .caption {
+            font-size: 1rem;
+            bottom: 12px;
+        }
+
+        #rotating-disk {
+            width: 70vh;
+            height: 70vh;
+            left: -35vh;
+            margin-top: -35vh;
+            opacity: 0.2; /* Dims the disk so it doesn't distract in landscape */
+        }
+
+        .letter-paper {
+            max-height: 80vh;
+            width: 90%;
+            padding: 30px;
+        }
+
+        .letter-paper h1 { font-size: 1.8rem; margin-bottom: 15px; }
+        .letter-paper p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; }
+        
+        #letter-section {
+            margin-left: 30vw;
+            min-width: 100vw;
+        }
+    }
+
+    /* Vinyl Fixes (Portrait) */
+    #rotating-disk {
         width: 80vw;
         height: 80vw;
         left: -40vw;
@@ -651,42 +700,26 @@ border-radius:20px;
         opacity: 0.4; 
     }
     
-    /* Audio bars - Moved to prevent overlay on picture captions */
     .audio-bars {
         left: 15px;
         bottom: 20px;
         transform: scale(0.8);
-        transform-origin: bottom left;
     }
 
-    /* Gallery Layout Adjustments */
     .gallery-scroll { padding-left: 15vw; } 
-    .gallery-track{gap:20px; padding-right: 30vw;}
-
-    /* Frame Adjustments - Tighter spacing for vertical screens */
-    .frame{
-        min-width: 80vw;
-        height: 52vh;
-        padding: 12px 12px 65px 12px; 
-    }
-    .caption { font-size: 1.1rem; bottom: 18px; }
-    .tag { font-size: 0.75rem; top: 12px; right: 12px; padding: 4px 10px; }
-
-    /* Letter Adjustments - Removed massive desktop margin gap */
-    #letter-section{
+    
+    /* Letter Adjustments */
+    #letter-section {
         min-width: 100vw;
         padding: 20px;
         margin-left: 15vw; 
     }
-    .letter-paper{
+    .letter-paper {
         padding: 40px 20px;
         border-radius: 25px;
     }
-    .letter-paper h1{font-size:1.8rem; margin-bottom: 25px;}
-    .letter-paper p{font-size:0.95rem; line-height:1.8; margin-bottom: 20px;}
-    .divider { width: 120px; margin: 0 auto 30px; }
-    .ending{font-size:1.5rem; margin-top: 40px;}
-    .letter-paper::before{ width: 250px; height: 150px; top: -70px; }
+    .ending { font-size: 1.5rem; }
+}
     
     /* Floating decors */
     .float { font-size: 1.2rem; }
