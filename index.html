@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Beautiful ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+cursor:none;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Montserrat',sans-serif;
+background:#fff7f9;
+}
+
+/* ========================= */
+/* ANIMATED BACKGROUND */
+/* ========================= */
+
+body{
+background:
+linear-gradient(
+-45deg,
+#ffd6e0,
+#fff1b8,
+#fff,
+#ffe4ec
+);
+
+background-size:400% 400%;
+
+animation:bgMove 15s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ========================= */
+/* CUSTOM CURSOR */
+/* ========================= */
+
+.custom-cursor{
+position:fixed;
+width:18px;
+height:18px;
+border-radius:50%;
+background:#ff5c8a;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:99999;
+transition:.1s;
+mix-blend-mode:multiply;
+}
+
+.custom-cursor.hover{
+width:45px;
+height:45px;
+background:rgba(255,255,255,.3);
+border:2px solid #ff5c8a;
+}
+
+/* ========================= */
+/* LIGHT BLOBS */
+/* ========================= */
+
+.light{
+position:fixed;
+border-radius:50%;
+filter:blur(120px);
+opacity:.35;
+pointer-events:none;
+z-index:0;
+}
+
+.light1{
+width:300px;
+height:300px;
+background:#ff9eb5;
+top:-50px;
+left:-50px;
+animation:floatBlob 15s infinite alternate ease-in-out;
+}
+
+.light2{
+width:350px;
+height:350px;
+background:#fff2a8;
+bottom:-100px;
+right:-100px;
+animation:floatBlob 18s infinite alternate ease-in-out;
+}
+
+@keyframes floatBlob{
+from{transform:translate(0,0);}
+to{transform:translate(80px,-60px);}
+}
+
+/* ========================= */
+/* PARTICLES */
+/* ========================= */
+
+#particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:1;
+}
+
+/* ========================= */
+/* INTRO */
+/* ========================= */
+
+#intro{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:100;
+transition:1.5s;
+}
+
+.subtitle{
+font-size:1.5rem;
+font-family:'Playfair Display',serif;
+color:#d81b60;
+margin-bottom:20px;
+}
+
+.title{
+font-size:4rem;
+font-family:'Cinzel',serif;
+color:#7a2e43;
+text-align:center;
+letter-spacing:4px;
+margin-bottom:50px;
+}
+
+#typing{
+border-right:3px solid #ff5c8a;
+padding-right:5px;
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{border-color:transparent;}
+}
+
+/* ========================= */
+/* GIFT */
+/* ========================= */
+
+.gift-container{
+position:relative;
+animation:giftFloat 4s infinite ease-in-out;
+}
+
+.gift{
+font-size:7rem;
+transition:.4s;
+}
+
+.gift-container:hover .gift{
+transform:scale(1.1) rotate(8deg);
+}
+
+.gift-glow{
+position:absolute;
+width:180px;
+height:180px;
+background:
+radial-gradient(circle,
+rgba(255,255,255,.9),
+transparent);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:-1;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%,100%{transform:translate(-50%,-50%) scale(.9);opacity:.5;}
+50%{transform:translate(-50%,-50%) scale(1.1);opacity:1;}
+}
+
+@keyframes giftFloat{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+}
+
+.instruction{
+margin-top:25px;
+letter-spacing:3px;
+color:#7a5a62;
+}
+
+/* ========================= */
+/* MAIN GALLERY */
+/* ========================= */
+
+#gallery{
+position:fixed;
+inset:0;
+opacity:0;
+visibility:hidden;
+transition:2s;
+z-index:10;
+}
+
+#gallery.active{
+opacity:1;
+visibility:visible;
+}
+
+.gallery-scroll{
+width:100%;
+height:100%;
+overflow-x:auto;
+overflow-y:hidden;
+scrollbar-width:none;
+padding-left:35vw;
+}
+
+.gallery-scroll::-webkit-scrollbar{
+display:none;
+}
+
+.gallery-track{
+display:inline-flex;
+align-items:center;
+gap:80px;
+height:100vh;
+padding-right:60vw;
+}
+
+/* ========================= */
+/* VINYL DISK */
+/* ========================= */
+
+#rotating-disk{
+--disk-scale:1;
+position:fixed;
+top:50%;
+left:-20vw;
+width:110vh;
+height:110vh;
+margin-top:-55vh;
+border-radius:50%;
+background:
+radial-gradient(circle at center,
+#333 5%, #111 6%, #222 20%, #111 21%,
+#222 40%, #111 41%, #222 60%, #111 61%,
+#000 100%);
+border:8px solid rgba(255,255,255,0.85);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:5;
+animation:spinRecord 10s linear infinite;
+box-shadow:0 0 60px rgba(0,0,0,0.25);
+overflow:hidden;
+}
+
+#rotating-disk:hover{
+--disk-scale:1.03;
+box-shadow:0 0 80px rgba(255,250,205,0.55);
+}
+
+#rotating-disk::before{
+content:'';
+position:absolute;
+inset:20px;
+border-radius:50%;
+background:
+repeating-radial-gradient(
+circle,
+rgba(255,255,255,0.04) 0px,
+rgba(255,255,255,0.04) 2px,
+transparent 3px,
+transparent 7px
+);
+}
+
+#rotating-disk::after{
+content:'';
+width:28%;
+height:28%;
+border-radius:50%;
+background:linear-gradient(135deg,#ffb6c1,#fffacd);
+border:5px solid white;
+box-shadow:inset 0 0 20px rgba(0,0,0,0.15);
+}
+
+.vinyl-ring{
+position:absolute;
+inset:0;
+transform:rotate(-90deg);
+}
+
+.progress-ring{
+fill:none;
+stroke:rgba(255,255,255,0.7);
+stroke-width:2;
+stroke-linecap:round;
+stroke-dasharray:314;
+stroke-dashoffset:314;
+}
+
+@keyframes spinRecord{
+from{transform:rotate(0deg) scale(var(--disk-scale));}
+to{transform:rotate(360deg) scale(var(--disk-scale));}
+}
+
+/* ========================= */
+/* AUDIO BARS */
+/* ========================= */
+
+.audio-bars{
+position:fixed;
+left:40px;
+bottom:90px;
+display:flex;
+gap:7px;
+z-index:100;
+}
+
+.audio-bars span{
+width:6px;
+height:30px;
+border-radius:20px;
+background:linear-gradient(to top,#ff6f91,#fffacd);
+animation:bars 1s infinite ease-in-out;
+}
+
+.audio-bars span:nth-child(2){animation-delay:.2s;}
+.audio-bars span:nth-child(3){animation-delay:.4s;}
+.audio-bars span:nth-child(4){animation-delay:.6s;}
+.audio-bars span:nth-child(5){animation-delay:.8s;}
+
+@keyframes bars{
+0%,100%{height:10px;}
+50%{height:45px;}
+}
+
+/* ========================= */
+/* PROGRESS */
+/* ========================= */
+
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:linear-gradient(to right,#ff6f91,#fffacd);
+z-index:99999;
+}
+
+/* ========================= */
+/* PHOTO FRAMES */
+/* ========================= */
+
+.frame{
+position:relative;
+min-width:500px;
+height:58vh;
+background:white;
+padding:18px 18px 85px 18px;
+border-radius:5px;
+box-shadow:0 25px 50px rgba(0,0,0,.12);
+transition:.5s;
+animation:photoFloat 6s infinite ease-in-out;
+}
+
+.frame:hover{
+transform:scale(1.05) rotate(2deg);
+box-shadow:0 40px 80px rgba(255,105,180,.25);
+}
+
+.frame img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:4px;
+}
+
+.caption{
+position:absolute;
+bottom:25px;
+left:50%;
+transform:translateX(-50%);
+font-family:'Playfair Display',serif;
+font-size:1.4rem;
+color:#5a4648;
+}
+
+.tag{
+position:absolute;
+top:20px;
+right:20px;
+background:white;
+padding:6px 14px;
+border-radius:20px;
+font-size:.9rem;
+color:#d81b60;
+font-weight:600;
+}
+
+@keyframes photoFloat{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+}
+
+/* ========================= */
+/* LETTER SECTION */
+/* ========================= */
+
+#letter-section{
+position:relative;
+min-width:120vw;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:80px 120px;
+margin-left: 80vw;
+}
+
+.letter-box{
+position:relative;
+width:100%;
+max-width:1200px;
+}
+
+.letter-paper{
+position:relative;
+width:100%;
+max-height: 85vh; /* ADDED THIS FOR SCROLLING */
+overflow-y: auto; /* ADDED THIS FOR SCROLLING */
+overflow-x: hidden;
+padding:90px 110px;
+border-radius:40px;
+background:linear-gradient(145deg,rgba(255,255,255,.99),rgba(255,245,248,.96));
+box-shadow:0 30px 100px rgba(255,105,180,.18);
+}
+
+/* BEAUTIFUL CUSTOM SCROLLBAR FOR THE LETTER */
+.letter-paper::-webkit-scrollbar {
+    width: 8px;
+}
+.letter-paper::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 40px 0; 
+}
+.letter-paper::-webkit-scrollbar-thumb {
+    background: #ffb6c1; 
+    border-radius: 10px;
+}
+.letter-paper::-webkit-scrollbar-thumb:hover {
+    background: #ff6f91; 
+}
+
+.letter-paper::before{
+content:'';
+position:absolute;
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+width:400px;
+height:260px;
+background:radial-gradient(circle,rgba(255,182,193,.5),transparent);
+filter:blur(60px);
+}
+
+.float{
+position:absolute;
+font-size:1.8rem;
+opacity:.4;
+animation:floatDecor 8s infinite ease-in-out;
+}
+
+.float:nth-child(1){top:10%;left:5%;}
+.float:nth-child(2){top:18%;right:8%;}
+.float:nth-child(3){bottom:12%;left:8%;}
+.float:nth-child(4){bottom:15%;right:10%;}
+
+@keyframes floatDecor{
+0%,100%{transform:translateY(0px) rotate(0deg);}
+50%{transform:translateY(-20px) rotate(8deg);}
+}
+
+.letter-paper h1{
+font-size:3.4rem;
+font-family:'Cinzel',serif;
+text-align:center;
+line-height:1.4;
+margin-bottom:40px;
+color:#d81b60;
+}
+
+.divider{
+width:180px;
+height:5px;
+margin:0 auto 60px;
+border-radius:20px;
+background:linear-gradient(to right,#ff6f91,#fffacd,#ff6f91);
+}
+
+.letter-paper p{
+font-size:1.2rem;
+line-height:2.5;
+letter-spacing:.3px;
+color:#5a4648;
+text-align:center;
+max-width:760px;
+margin:0 auto 35px auto;
+}
+
+.ending{
+margin-top:70px;
+font-size:2.5rem;
+font-family:'Playfair Display',serif;
+text-align:center;
+color:#ff6f91;
+animation:endingGlow 2s infinite alternate;
+}
+
+@keyframes endingGlow{
+from{text-shadow:0 0 10px rgba(255,105,180,.3);}
+to{text-shadow:0 0 25px rgba(255,105,180,.8), 0 0 50px rgba(255,182,193,.5);}
+}
+
+/* ========================= */
+/* CINEMATIC FULL SCREEN TRANSITION */
+/* ========================= */
+
+#screen-transition{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:radial-gradient(circle,rgba(255,255,255,1) 0%,rgba(255,182,193,0.98) 100%);
+z-index:99999; /* Covers everything */
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:opacity 0.4s ease; /* SPED UP TO 0.4s */
+}
+
+#screen-transition.active{
+opacity:1;
+visibility:visible;
+pointer-events:all; /* Blocks user from swiping during jump */
+}
+
+.transition-heart{
+font-size:7rem;
+animation:heartPulse 2s infinite, heartFloat 5s infinite ease-in-out;
+}
+
+.transition-text{
+margin-top:30px;
+font-size:2rem;
+font-family:'Cinzel',serif;
+letter-spacing:4px;
+color:#d81b60;
+}
+
+@keyframes heartPulse{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.15);}
+}
+
+@keyframes heartFloat{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-20px);}
+}
+
+/* ========================= */
+/* IMAGE MODAL */
+/* ========================= */
+
+#modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.88);
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+visibility:hidden;
+transition:.4s;
+z-index:999999;
+}
+
+#modal.active{
+opacity:1;
+visibility:visible;
+}
+
+#modal img{
+max-width:85%;
+max-height:85%;
+border-radius:20px;
+}
+
+/* ========================= */
+/* MOBILE (FULLY IMPROVED) */
+/* ========================= */
+
+@media(max-width:768px){
+    *{cursor:auto;}
+    .custom-cursor{display:none;}
+    
+    /* Intro Fixes */
+    .title{font-size:2.2rem; margin-bottom: 30px;}
+    .subtitle{font-size:1.2rem; text-align:center; padding: 0 20px;}
+    .gift{font-size:5rem;}
+    .gift-glow{width: 140px; height: 140px;}
+    
+    /* Vinyl Fixes - Less obtrusive, scaled down so pictures pop more */
+    #rotating-disk{
+        width: 80vw;
+        height: 80vw;
+        left: -40vw;
+        margin-top: -40vw; 
+        opacity: 0.4; 
+    }
+    
+    /* Audio bars - Moved to prevent overlay on picture captions */
+    .audio-bars {
+        left: 15px;
+        bottom: 20px;
+        transform: scale(0.8);
+        transform-origin: bottom left;
+    }
+
+    /* Gallery Layout Adjustments */
+    .gallery-scroll { padding-left: 15vw; } 
+    .gallery-track{gap:20px; padding-right: 30vw;}
+
+    /* Frame Adjustments - Tighter spacing for vertical screens */
+    .frame{
+        min-width: 80vw;
+        height: 52vh;
+        padding: 12px 12px 65px 12px; 
+    }
+    .caption { font-size: 1.1rem; bottom: 18px; }
+    .tag { font-size: 0.75rem; top: 12px; right: 12px; padding: 4px 10px; }
+
+    /* Letter Adjustments - Removed massive desktop margin gap */
+    #letter-section{
+        min-width: 100vw;
+        padding: 20px;
+        margin-left: 15vw; 
+    }
+    .letter-paper{
+        padding: 40px 20px;
+        border-radius: 25px;
+    }
+    .letter-paper h1{font-size:1.8rem; margin-bottom: 25px;}
+    .letter-paper p{font-size:0.95rem; line-height:1.8; margin-bottom: 20px;}
+    .divider { width: 120px; margin: 0 auto 30px; }
+    .ending{font-size:1.5rem; margin-top: 40px;}
+    .letter-paper::before{ width: 250px; height: 150px; top: -70px; }
+    
+    /* Floating decors */
+    .float { font-size: 1.2rem; }
+
+    /* Transition Screen */
+    .transition-heart{font-size:4rem;}
+    .transition-text{font-size:1.2rem;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="light light1"></div>
+<div class="light light2"></div>
+
+<div class="custom-cursor" id="cursor"></div>
+
+<canvas id="particles"></canvas>
+
+<div id="progress"></div>
+
+<audio id="music" loop>
+<source src="Dulo Ng Pahina - Wilbert Ross - Lyrics  Wedding Version.mp3" type="audio/mpeg">
+</audio>
+
+<div id="intro">
+<div class="subtitle">For my favorite person...</div>
+<h1 class="title"><span id="typing"></span></h1>
+<div class="gift-container" id="giftBtn">
+<div class="gift-glow"></div>
+<div class="gift">🎁</div>
+</div>
+<div class="instruction">Tap the gift to open</div>
+</div>
+
+<div id="gallery">
+
+<div id="rotating-disk" data-hoverable="true">
+<svg class="vinyl-ring" viewBox="0 0 120 120">
+<circle class="progress-ring" cx="60" cy="60" r="50"></circle>
+</svg>
+</div>
+
+<div class="audio-bars">
+<span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="gallery-scroll" id="slider">
+<div class="gallery-track">
+
+<div class="frame">
+    <div class="tag">Chapter 1</div>
+    <img src="vc momints.jpg" alt="Memory 1">
+    <div class="caption">vc momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 2</div>
+    <img src="umpisa ng 1st yr momints ni bebiii.jpg" alt="Memory 2">
+    <div class="caption">umpisa ng 1st yr momints ni bebiii</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 3</div>
+    <img src="bday kulitan.jpg" alt="Memory 3">
+    <div class="caption">bday kulitan</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 4</div>
+    <img src="cutieee bday.jpg" alt="Memory 4">
+    <div class="caption">cutieee bday</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 5</div>
+    <img src="first bouquet in my life.jpg" alt="Memory 5">
+    <div class="caption">first bouquet in my life</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 6</div>
+    <img src="jabiii momints.jpg" alt="Memory 6">
+    <div class="caption">jabiii momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 7</div>
+    <img src="bahay momints.jpg" alt="Memory 7">
+    <div class="caption">bahay momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 8</div>
+    <img src="cutieee.jpg" alt="Memory 8">
+    <div class="caption">cutieee</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 9</div>
+    <img src="wow takas cine.jpg" alt="Memory 9">
+    <div class="caption">wow takas cine</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 10</div>
+    <img src="mga unang dayo sa mcl.jpg" alt="Memory 10">
+    <div class="caption">mga unang dayo sa mcl</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 11</div>
+    <img src="711 antayan sa uwian.jpg" alt="Memory 11">
+    <div class="caption">711 antayan sa uwian</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 12</div>
+    <img src="gala takas momints.jpeg" alt="Memory 12">
+    <div class="caption">gala takas momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 13</div>
+    <img src="car momints.jpg" alt="Memory 13">
+    <div class="caption">car momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 14</div>
+    <img src="bahay ulii.jpeg" alt="Memory 14">
+    <div class="caption">bahay ulii</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 15</div>
+    <img src="unang luto momints.png" alt="Memory 15">
+    <div class="caption">unang luto momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 16</div>
+    <img src="more bouquet from bebiii.jpg" alt="Memory 16">
+    <div class="caption">more bouquet from bebiii</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 17</div>
+    <img src="db momints.jpg" alt="Memory 17">
+    <div class="caption">db momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 18</div>
+    <img src="kawawang bebiii.jpg" alt="Memory 18">
+    <div class="caption">kawawang bebiii</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 19</div>
+    <img src="miming.jpeg" alt="Memory 19">
+    <div class="caption">miming</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 20</div>
+    <img src="cutieee tambay.webp" alt="Memory 20">
+    <div class="caption">cutieee tambay</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 21</div>
+    <img src="kulitan sa kusina.webp" alt="Memory 21">
+    <div class="caption">kulitan sa kusina</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 22</div>
+    <img src="anniv momints.jpg" alt="Memory 22">
+    <div class="caption">anniv momints</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 23</div>
+    <img src="anniv 2 momints mcdo.jpg" alt="Memory 23">
+    <div class="caption">anniv 2 momints mcdo</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 24</div>
+    <img src="before maging official na tayo.jpeg" alt="Memory 24">
+    <div class="caption">before maging official na tayo</div>
+</div>
+
+<div class="frame">
+    <div class="tag">Chapter 25</div>
+    <img src="first penguu moments.jpg" alt="Memory 25">
+    <div class="caption">first penguu moments</div>
+</div>
+
+<div id="letter-section">
+<div class="letter-box">
+<div class="float">✨</div>
+<div class="float">💕</div>
+<div class="float">🌸</div>
+<div class="float">💫</div>
+
+<div class="letter-paper">
+    <h1>To My Baby Mahal Ko💌</h1>
+    <div class="divider"></div>
+    
+    <p>Hiii mahal kooo! Sabe sayo may surprise me e whehehee. :>></p>
+    
+    <p>Balak ko talaga isend to po nang maaga sayo as my first gift to you, something kakaiba na naisip ko po noon gawin since nung sinabi mo nakaraan yung magbibigay ka sa mag bata ng foods with qr, kaso ayun di na natin nagawa yunnn.</p>
+    
+    <p>Happy happy birthday po my most beautiful woman! Di ka na po teensss natanda ka na po agaddd, but you'll always be my babyyyy :>></p>
+    
+    <p>You've been so strong these past years, and I wanted to remind you of how you've been, how we've been, and anlayo na ng narating nga natin. Ambilis ng orasss parang kelan lang 15 yrs old ka lang na kulit kulittt hihihihi but now you're a full grown woman now. :>></p>
+    
+    <p>Mahaba pa po ang panahon at marami ka pa pong pagdadaanan. I know na it's been really hard for you lalo na po nung nawala si fads Jay, and your birthday reminds you of him, but unexpectedly, sakto ngang 26 po, a day na magreremind sayo na he's always right here, and he's happy and proud for you.</p>
+    
+    <p>Keep fighting mahal ko, dedma sa mga bashersssss, I assure you that I'll always be right here for you. Kasama mo ko mahal ko, meron at meron kang kakampi lagi.</p>
+    
+    <p>I loveee youuu so muchhh po! :>>> Unang gift ko pa lang po to heheheeh abangannn sa iyong birthday mismooo :>>> Mwahhhh</p>
+    
+    <div class="ending">Happy Birthday my Babyyy ❤️</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="screen-transition">
+<div class="transition-heart">💖</div>
+<div class="transition-text">One Last Thing...</div>
+</div>
+
+<div id="modal">
+<img id="modalImg">
+</div>
+
+<script>
+/* ========================= */
+/* TYPING */
+/* ========================= */
+const text = 'A Sweet Surprise Awaits';
+const typing = document.getElementById('typing');
+let index = 0;
+
+function typeText(){
+if(index < text.length){
+typing.innerHTML += text.charAt(index);
+index++;
+setTimeout(typeText,80);
+}
+}
+typeText();
+
+/* ========================= */
+/* CURSOR */
+/* ========================= */
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{
+cursor.style.left = e.clientX + 'px';
+cursor.style.top = e.clientY + 'px';
+});
+
+/* ========================= */
+/* PARTICLES */
+/* ========================= */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+let particles = [];
+
+class Particle{
+constructor(){
+this.x = Math.random()*canvas.width;
+this.y = Math.random()*canvas.height;
+this.size = Math.random()*4;
+this.speedY = Math.random()*1+.5;
+}
+update(){
+this.y -= this.speedY;
+if(this.y < 0){
+this.y = canvas.height;
+}
+}
+draw(){
+ctx.fillStyle = 'rgba(255,255,255,.7)';
+ctx.beginPath();
+ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+ctx.fill();
+}
+}
+
+for(let i=0;i<120;i++){
+particles.push(new Particle());
+}
+
+function animateParticles(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+p.update();
+p.draw();
+});
+requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+/* ========================= */
+/* INTRO */
+/* ========================= */
+const intro = document.getElementById('intro');
+const gallery = document.getElementById('gallery');
+const giftBtn = document.getElementById('giftBtn');
+const music = document.getElementById('music');
+
+giftBtn.addEventListener('click',()=>{
+music.play();
+intro.style.opacity='0';
+setTimeout(()=>{
+intro.style.display='none';
+gallery.classList.add('active');
+},1200);
+});
+
+/* ========================= */
+/* VINYL */
+/* ========================= */
+const vinyl = document.getElementById('rotating-disk');
+
+vinyl.addEventListener('click',()=>{
+if(music.paused){
+music.play();
+vinyl.style.animationPlayState = 'running';
+}else{
+music.pause();
+vinyl.style.animationPlayState = 'paused';
+}
+});
+
+/* ========================= */
+/* GALLERY & SCROLL LOGIC */
+/* ========================= */
+const slider = document.getElementById('slider');
+const progress = document.getElementById('progress');
+const letter = document.getElementById('letter-section');
+const fsTransition = document.getElementById('screen-transition');
+
+let autoScroll = true;
+let transitionDone = false;
+
+function getStopPoint() {
+    const isMobile = window.innerWidth <= 768;
+    const offset = isMobile ? window.innerWidth * 0.6 : window.innerWidth * 0.25;
+    return letter.offsetLeft + letter.offsetWidth - slider.clientWidth - offset;
+}
+
+function autoMove(){
+    if(autoScroll){
+        slider.scrollLeft += 0.4;
+    }
+    
+    const stopPoint = getStopPoint();
+    
+    if(slider.scrollLeft >= stopPoint){
+        slider.scrollLeft = stopPoint;
+        autoScroll = false;
+    }
+    
+    requestAnimationFrame(autoMove);
+}
+autoMove();
+
+/* SCROLL LISTENER */
+slider.addEventListener('scroll', () => {
+    const stopPoint = getStopPoint();
+    
+    // CLAMP
+    if (slider.scrollLeft > stopPoint) {
+        slider.scrollLeft = stopPoint;
+    }
+
+    // PROGRESS
+    const progressWidth = (slider.scrollLeft / stopPoint) * 100;
+    progress.style.width = Math.min(progressWidth, 100) + '%';
+
+    /* CINEMATIC FULL SCREEN TRANSITION */
+    // CHANGED: Triggers exactly when the right edge of the screen 
+    // passes the last picture and is about to hit the letter.
+    const triggerPoint = letter.offsetLeft - window.innerWidth + 50;
+    
+    if (slider.scrollLeft >= triggerPoint && !transitionDone) {
+        transitionDone = true;
+        
+        // 1. Fade the full-screen curtain in immediately
+        fsTransition.classList.add('active');
+        
+        // 2. Teleport the scroll position to the final spot behind the curtain
+        setTimeout(() => {
+            slider.scrollLeft = stopPoint;
+            autoScroll = false; 
+        }, 500); // Gives the pink curtain enough time to become opaque
+
+        // 3. Gracefully lift the curtain to reveal the centered letter (Faster)
+        setTimeout(() => {
+            fsTransition.classList.remove('active');
+        }, 1200); // Reduced from 2000ms for a snappier, less drawn-out reveal
+    }
+});
+
+/* USER INTERACTION */
+slider.addEventListener('wheel', e => {
+    autoScroll = false; 
+    const stopPoint = getStopPoint();
+    if(slider.scrollLeft >= stopPoint && (e.deltaY > 0 || e.deltaX > 0)){
+        slider.scrollLeft = stopPoint;
+        e.preventDefault();
+    }
+}, {passive:false});
+
+slider.addEventListener('touchstart', () => {
+    autoScroll = false;
+}, {passive:true});
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+
+document.querySelectorAll('.frame img').forEach(img=>{
+    img.addEventListener('click',()=>{
+        modal.classList.add('active');
+        modalImg.src = img.src;
+    });
+});
+
+modal.addEventListener('click',()=>{
+    modal.classList.remove('active');
+});
+
+/* ========================= */
+/* RESIZE */
+/* ========================= */
+window.addEventListener('resize',()=>{
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+});
+
+</script>
+
+</body>
+</html>
